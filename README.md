@@ -15,7 +15,7 @@ cd ~/SwarmTCR
 ./swarmTCR -r <reference set> -i <trainging sample set> -t <test sample set> -1 <TCRdist output file> -2 <SwarmTCR output file> -n <number of iterations> -s <swarm size>
 ```
 
-## Deep-sequencing usage
+## Bulk sequencing usage
 ```console
 cd ~/SwarmTCR
 ./swarmTCR -r <training reference set> -i <trainging sample set> -t <test sample set> -x <test reference set> -1 <TCRdist output file> -2 <SwarmTCR output file> -n <number of iterations> -s <swarm size>
@@ -27,9 +27,9 @@ The ```-x``` is only used if a test reference set is availabe. In our implementa
 
 Each row in this file contains a TCR ID, boolean flag to infer a match or mismatch, and complete CDR loop protein data. The flag is either a ```1``` or ```0```, ```1``` indicates a match, ```0``` a mismatch.
 
-**Deep-sequencing input**
+**Bulk sequencing input**
 
-Deep-sequencing input will use either the alpha or beta chain only, there is no need to specify chain type.
+Bulk sequencing input will use either the alpha or beta chain only, there is no need to specify chain type.
 ```
 <TCR id> <flag> <CDR1> <CDR2> <CDR2.5> <CDR3>
 ...
