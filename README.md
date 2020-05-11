@@ -25,7 +25,7 @@ The ```-x``` is only used if a test reference set is availabe. In our implementa
 
 **Input files**
 
-Each row in this file contains a TCR ID, boolean flag to infer a match or mismatch, and complete CDR loop protein data. The flag is either a ```1``` or ```0```, ```1``` indicates a match, ```0``` a mismatch.
+Each row in this file contains a TCR ID, boolean flag to infer a positve or negative label, and complete CDR loop protein data. The flag is either a ```1``` or ```0```, ```1``` indicates a positive label, ```0``` a negative label.
 
 **Bulk sequencing input**
 
