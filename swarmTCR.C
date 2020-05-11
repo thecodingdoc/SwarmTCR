@@ -1,8 +1,9 @@
 // This file is part of the swarmTCR program
-// Copyright (c) 2018 Dario Ghersi and Ryan Ehrlich
-// Version: 20181222
+// Copyright (c) 2020 Dario Ghersi and Ryan Ehrlich
+// Version: 20200331
 
 #include <cstdlib>
+#include <fstream>
 #include <iostream>
 #include "swarmTCR.h"
 #include "pso.h"
@@ -116,6 +117,17 @@ int main(int argc, char **argv) {
   res =  nearestNeighbor(refSetData, testSetData, optimalWeights, newBLOSUM);
   ap = averagePrecision(res, p.outputOptFileName);
   cout << "\nTest results with optimized weights: " << ap << endl;
+
+  // print the score of the nearest neighbor for each test cell
+  fstream scoreFile;
+  string scoreFileName = string(p.outputOptFileName);
+  scoreFileName += ".scores";
+  scoreFile.open(scoreFileName, fstream::out);
+
+  for (unsigned int i = 0; i < res->numCells; i++) {
+    scoreFile << testSetData->sampleID[i] << "\t" << res->labels[i] << "\t" << res->scores[i] << endl;
+  }
+  scoreFile.close();
 
   // free memory for optimal weights 
   free(optimalWeights);

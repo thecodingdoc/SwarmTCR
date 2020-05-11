@@ -1,6 +1,6 @@
 // This file is part of the swarmTCR program
-// Copyright (c) 2018 Dario Ghersi and Ryan Ehrlich
-// Version 20181223
+// Copyright (c) 2020 Dario Ghersi and Ryan Ehrlich
+// Version 20200227
 
 #include <algorithm>
 #include <cstdlib>
@@ -371,7 +371,7 @@ struct SingleCell *readSingleCellData(string infileName)
     exit(1);
   }
 
-  // count the cdr regions (single cell vs. deep sequencing)
+  // count the cdr regions (single cell vs. bulk sequencing)
   string header, token;
   CURRCDR = -2; // to avoid counting the SAMPLE_ID and EPITOPE as CDRs
   getline(infile, header);
@@ -380,7 +380,7 @@ struct SingleCell *readSingleCellData(string infileName)
     CURRCDR++;
   }
 
-  // count how many receptors are there
+  // count how many receptors there are
   unsigned int numRec = 0;
   while (getline(infile, line)) {
     numRec++;

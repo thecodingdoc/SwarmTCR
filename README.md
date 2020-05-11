@@ -64,3 +64,4 @@ Column 1: Nearest-neighbor match (TCR ID)
 Column 2: Binary label (0 = negative, 1 = positive)
 
 Column 3: Distance value (actual distance = distance * -1)
+
