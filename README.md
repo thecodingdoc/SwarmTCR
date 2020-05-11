@@ -51,16 +51,11 @@ There are a total of 3 ouput files:
 3) SwarmTCR scores (```SwarmTCR output file```.scores). This file contains the nearest-neighbor TCR ID, label, and distance. 
 
 Precision recall files are formatted as follows:
-
   Column 1: Precision values
-  
   Column 2: Recall values
   
   
 Score file is formatted as follows:
-
   Column 1: Nearest-neighbor match (TCR ID)
-  
   Column 2: Binary label (0 = negative, 1 = positive)
-  
   Column 3: Distance value (actual distance = distance * -1)
