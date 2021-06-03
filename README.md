@@ -7,14 +7,14 @@ SwarmTCR predicts T-cell receptor (TCR) specificity using the 'distance' between
 cd ~/SwarmTCR
 g++  -Wall -O3 -fopenmp -o swarmTCR util.C pso.C swarmTCR.C
 ```
-The ```-fopenmp``` option allows the computation of the sequence alignments and optimization to run in parallel on a multicore machine using the OpenMP library. It is optional but highly recommended as it speed things up. For most Mac OS X users, the OpenMP library needs to be installed separately. To do that, install Homebrew if not already installed, and do the following:
+The ```-fopenmp``` option allows the computation of the sequence alignments and optimization to run in parallel on a multicore machine using the OpenMP library. It is optional but highly recommended as it speed things up. For most Mac OS X users, the OpenMP library needs to be installed separately. To do that, install Homebrew (https://brew.sh/) if not already installed, and do the following:
 
 ```console
 brew install llvm
 brew install libomp
 /usr/local/Cellar/llvm/12.0.0_1/bin/clang++  -Wall -O3 -fopenmp -o swarmTCR util.C pso.C swarmTCR.C -L/usr/local/Cellar/libomp/12.0.0/lib
 ```
-12.0.0 in the last command needs to be replaced with the version in your system.
+12.0.0 in the last command needs to be replaced with the correct version in your system.
 
 ## Single-cell usage
 ```console
