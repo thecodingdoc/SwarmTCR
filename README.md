@@ -25,7 +25,7 @@ cd ~/SwarmTCR
 cd ~/SwarmTCR
 ./swarmTCR -r <training reference set> -i <training sample set> -t <test sample set> -x <test reference set> -1 <TCRdist output file> -2 <SwarmTCR output file> -n <number of iterations> -s <swarm size>
 ```
-## Bulk sequencing usage
+## Bulk sequencing example usage
 ```console
 cd ~/SwarmTCR
 ./swarmTCR -r C_refTra_Jun19_gilgfvftl_0.txt -i C_tra_Jun19_gilgfvftl_0.txt -t C_tes_Jun19_gilgfvftl_0.txt -x C_refTes_Jun19_gilgfvftl_0.txt -1 TCRdist_out.txt -2 SwarmTCR_out.txt -n 20 -s 25
