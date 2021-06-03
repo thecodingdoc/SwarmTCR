@@ -12,7 +12,7 @@ The ```-fopenmp``` option allows the computation of the sequence alignments and 
 ## Single-cell usage
 ```console
 cd ~/SwarmTCR
-./swarmTCR -r <reference set> -i <trainging sample set> -t <test sample set> -1 <TCRdist output file> -2 <SwarmTCR output file> -n <number of iterations> -s <swarm size>
+./swarmTCR -r <reference set> -i <training sample set> -t <test sample set> -1 <TCRdist output file> -2 <SwarmTCR output file> -n <number of iterations> -s <swarm size>
 ```
 ## Single-cell example usage
 ```console
@@ -23,7 +23,7 @@ cd ~/SwarmTCR
 ## Bulk sequencing usage
 ```console
 cd ~/SwarmTCR
-./swarmTCR -r <training reference set> -i <trainging sample set> -t <test sample set> -x <test reference set> -1 <TCRdist output file> -2 <SwarmTCR output file> -n <number of iterations> -s <swarm size>
+./swarmTCR -r <training reference set> -i <training sample set> -t <test sample set> -x <test reference set> -1 <TCRdist output file> -2 <SwarmTCR output file> -n <number of iterations> -s <swarm size>
 ```
 ## Bulk sequencing usage
 ```console
