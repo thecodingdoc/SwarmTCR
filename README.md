@@ -19,22 +19,26 @@ brew install libomp
 ## Single-cell usage
 ```console
 cd ~/SwarmTCR
+cd Example_data
 ./swarmTCR -r <reference set> -i <training sample set> -t <test sample set> -1 <TCRdist output file> -2 <SwarmTCR output file> -n <number of iterations> -s <swarm size>
 ```
 ## Single-cell example usage
 ```console
 cd ~/SwarmTCR
+cd Example_data
 ./swarmTCR -r SC_GILGFVFTL_Reference.txt -i SC_GILGFVFTL_Train_Sample.txt -t SC_GILGFVFTL_Test_Sample.txt -1 TCRdist_out.txt -2 SwarmTCR_out.txt -n 20 -s 25
 ```
 
 ## Bulk sequencing usage
 ```console
 cd ~/SwarmTCR
+cd Example_data
 ./swarmTCR -r <training reference set> -i <training sample set> -t <test sample set> -x <test reference set> -1 <TCRdist output file> -2 <SwarmTCR output file> -n <number of iterations> -s <swarm size>
 ```
 ## Bulk sequencing example usage
 ```console
 cd ~/SwarmTCR
+cd Example_data
 ./swarmTCR -r BS_YVLDHLIVV_Train_Reference.txt -i BS_YVLDHLIVV_Train_Sample.txt -t BS_YVLDHLIVV_Test_Sample.txt -x BS_YVLDHLIVV_Test_Reference.txt -1 TCRdist_out.txt -2 SwarmTCR_out.txt -n 20 -s 25
 ```
 
