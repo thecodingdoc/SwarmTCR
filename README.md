@@ -91,12 +91,14 @@ In order to use SwarmTCR on previously uncharacterized TCR sequences,
 you can use the program SwarmTCRClassify.
 
 ** Compiling SwarmTCRClassify **
+
 To compile the program, simply type:
 ```
 g++  -Wall -O3 -fopenmp -o swarmTCRClassify util.C pso.C swarmTCRClassify.C
 ```
 
 ** Running SwarmTCRClassify **
+
 The program can be run like this:
 ```
 ./swarmTCRClassify -w REFERENCE_WEIGHTS -i INPUT_TCRs
