@@ -86,3 +86,35 @@ Column 2: Binary label (0 = negative, 1 = positive)
 
 Column 3: Distance value (actual distance = distance * -1)
 
+## Using pre-trained weights to perform classification
+In order to use SwarmTCR on previously uncharacterized TCR sequences,
+you can use the program SwarmTCRClassify.
+
+** Compiling SwarmTCRClassify **
+To compile the program, simply type:
+```
+g++  -Wall -O3 -fopenmp -o swarmTCRClassify util.C pso.C swarmTCRClassify.C
+```
+
+** Running SwarmTCRClassify **
+The program can be run like this:
+```
+./swarmTCRClassify -w REFERENCE_WEIGHTS -i INPUT_TCRs
+```
+
+These two files are as follows:
+- REFERENCE_WEIGHTS. This file should contain a header on the first line, and in the following lines it should have the full filename (i.e., path + filename) of each reference file, epitope name, and pre-trained weights. For example:
+```
+FILE_NAME EPITOPE CDR1A_W CDR2A_W CDR2.5A_W CDR3A_W CDR1B_W CDR2B_W CDR2.5B_W CDR3B_W
+./GILGFVFTL/GILGFVFTL_Classifier-Reference.txt GILGFVFTL 0.140705 0 0 0 1 0 0.959139 1
+./GLCTLVAML/GLCTLVAML_Classifier-Reference.txt GLCTLVAML 1 0.074943 0.611607 0.989865 1 1 0.314176 1
+```
+- INPUT_TCRs. This file lists the TCRs we want to classify and is structured as:
+```
+TCR_ID CDR1A CDR2A CDR2.5A CDR3A CDR1B CDR2B CDR2.5B CDR3B
+iedb_ylepgpvtv_111 DSAIYN IQSSQRE DKSSGR AVLSSGGSNYKLT SGHTA FQGTGA PEGSV ASSFIGGTDTQY
+iedb_ylepgpvtv_112 DSAIYN IQSSQRE DKSSGR AVLSSGGSNYKLTF SGHTA FQGTGA PEGSV ASSFIGGTDTQYF
+'''
+Please notice that both files begin with a header line.
+
+The program writes to standard output the TCR_ID, the best (least negative) score, the corresponding epitope, and best matching TCR in the reference. You can use the second column (score) to threshold the results. High-confidence results will have scores close to zero.
